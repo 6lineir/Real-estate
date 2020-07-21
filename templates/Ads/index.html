@@ -1,5 +1,6 @@
 {% extends 'Ads/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <title>Amlak-Kara | خانه</title>
@@ -37,7 +38,7 @@
                                         <p>متراژ بنا</p>
                                         <img src="{% static 'Ads/img/rooms/size.png' %}" alt="">
                                         <i class="flaticon-bath"></i>
-                                        <span>متر {{ Ads.size2 }}</span>
+                                        <span>متر {{ Ads.sizelot }}</span>
                                     </div>
                                     <div class="beds">
                                         <p>خواب</p>
@@ -57,10 +58,10 @@
                                 </div>
                             </div>
                             <div class="room-price">
-                                <p>For Sale</p>
-                                <span>$345,000</span>
+                                <p>{% if Ads.catorg == 'R' %}برای اجاره {% endif%}{% if Ads.catorg == 'S' %}برای فروش {% endif%}</p>
+                                <span>تومان {{ Ads.price|intcomma:False }}</span>
                             </div>
-                            <a href="#" class="site-btn btn-line">نمایش اطلاعات</a>
+                            <a href="{% url 'Ads:AdsDetails' Ads.pk %}" class="site-btn btn-line">نمایش آگهی</a>
                         </div>
                     </div>
                 </div>

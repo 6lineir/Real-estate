@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #My App SetUp ...
+    'django.contrib.humanize',
     'accounts.apps.AccountsConfig',
     'Ads.apps.AdsConfig',
 ]

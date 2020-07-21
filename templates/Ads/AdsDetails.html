@@ -1,160 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'Ads/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Homes Template">
-    <meta name="keywords" content="Homes, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Single Property Page | Template</title>
+{% block content %}
+<title>Details</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
-        rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo">
-                        <a href="./index.html">
-                            <img src="img/logo.png" alt="">
-                        </a>
-                    </div>
-                    <ul class="main-menu">
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./search.html">Search Results</a></li>
-                        <li><a href="./about.html">Categories</a></li>
-                        <li><a href="./single-property.html">Single Property</a></li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-
-                        <li class="top-social">
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                        </li>
-                    </ul>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
-    <!-- Hero Section Begin -->
-    <section class="hero-section set-bg single-property-r" data-setbg="img/bg.jpg">
-        <div class="container hero-text text-white">
-            <h2>Property Page</h2>
-        </div>
-    </section>
+        {% include './tmp/header.html' %}
     <!-- Hero Section End -->
-    <!-- Filter Search Section Begin -->
-    <div class="filter-search">
-        <div class="container ">
-            <form class="filter-form">
-                <div class="location">
-                    <p>Location</p>
-                    <select class="filter-location">
-                        <option value="">London</option>
-                        <option value="">US</option>
-                        <option value="">UAE</option>
-                    </select>
-                </div>
-                <div class="search-type">
-                    <p>Property Type</p>
-                    <select class="filter-property">
-                        <option value="">House</option>
-                        <option value="">Resort</option>
-                        <option value="">Hotel</option>
-                    </select>
-                </div>
-                <div class="price-range">
-                    <p>Price</p>
-                    <div class="range-slider">
-                        <div id="slider-range">
-                            <span tabindex="0"
-                                class="ui-slider-handle ui-corner-all ui-state-default slider-left">50k</span>
-                            <span tabindex="0"
-                                class="ui-slider-handle ui-corner-all ui-state-default slider-right">300k</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bedrooms">
-                    <p>Bedrooms</p>
-                    <div class="room-filter-pagi">
-                        <div class="bf-item">
-                            <input type="radio" name="room" id="room-1">
-                            <label for="room-1">1</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="room" id="room-2">
-                            <label for="room-2">2</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="room" id="room-3">
-                            <label for="room-3">3</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="room" id="room-4">
-                            <label for="room-4">4+</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="bathrooms">
-                    <p>Bathrooms</p>
-                    <div class="room-filter-pagi">
-                        <div class="bf-item">
-                            <input type="radio" name="bathroom" id="bathroom-1">
-                            <label for="bathroom-1">1</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="bathroom" id="bathroom-2">
-                            <label for="bathroom-2">2</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="bathroom" id="bathroom-3">
-                            <label for="bathroom-3">3</label>
-                        </div>
-                        <div class="bf-item">
-                            <input type="radio" name="bathroom" id="bathroom-4">
-                            <label for="bathroom-4">4+</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="search-btn">
-                    <button type="submit"><i class="flaticon-search"></i>Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Filter Search Section End -->
+
     <!-- Single Property Section Begin -->
     <div class="single-property">
         <div class="container">
             <div class="row spad-p">
                 <div class="col-lg-12">
                     <div class="property-title">
-                        <h3>Country Style House with beautiful garden and terrace</h3>
+                        <h3>{{ object.title }}</h3>
                         <a href="#"><i class="fa flaticon-placeholder"></i> London, 76 Guild Street, EC3P 3WF</a>
                     </div>
                     <div class="property-price">
@@ -167,10 +28,10 @@
                 <div class="col-lg-12">
                     <div class="property-img owl-carousel">
                         <div class="single-img">
-                            <img src="img/single-property/1.jpg" alt="">
+                            <img src="{{ object.image.url }}" alt="">
                         </div>
                         <div class="single-img">
-                            <img src="img/single-property/2.jpg" alt="">
+                            <img src="{{ object.image2.url }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -188,7 +49,7 @@
                             <div class="col-lg-12">
                                 <div class="t-details">
                                     <div class="register-id">
-                                        <p>Registered ID: <span>0D05426FF1</span></p>
+                                        <p>شناسه آگهی : <span>{{ object.id }}</span></p>
                                     </div>
                                     <div class="popular-room-features single-property">
                                         <div class="size">
@@ -384,103 +245,8 @@
     </section>
     <!-- Single Property Deatails Section End -->
     <!-- Footer Section Begin -->
-    <footer class="footer-section p-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center sp-60">
-                    <img src="img/only-logo.png" alt="">
-                </div>
-            </div>
-            <div class="row p-37">
-                <div class="col-lg-4">
-                    <div class="about-footer">
-                        <h5>About Homes</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend tristique venenatis.
-                            Maecenas a rutrum tellus nam vel semper nibh.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-blog">
-                        <h5>Latest Blog Posts</h5>
-
-                        <div class="single-blog">
-                            <div class="lt-side">
-                                <img src="img/footer-blog-1.jpg" alt="">
-                            </div>
-                            <div class="rt-side">
-                                <h6>How to find the perfect area for<br> your next house.</h6>
-                                <div class="blog-time">
-                                    <i class="flaticon-clock"></i>
-                                    <span>5 min</span>
-                                </div>
-                                <a href="#" class="read-more">
-                                    <i class="flaticon-right-arrow-1"></i>
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-blog">
-                            <div class="lt-side">
-                                <img src="img/footer-blog-2.jpg" alt="">
-                            </div>
-                            <div class="rt-side">
-                                <h6>How to find the perfect area for<br> your next house.</h6>
-                                <div class="blog-time">
-                                    <i class="flaticon-clock"></i>
-                                    <span>5 min</span>
-                                </div>
-                                <a href="#" class="read-more">
-                                    <i class="flaticon-right-arrow-1"></i>
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-address">
-                        <h5>Get In Touch</h5>
-                        <ul>
-                            <li><i class="flaticon-placeholder"></i><span>132 Liberty Streetelit, Plano, Texas</span>
-                            </li>
-                            <li><i class="flaticon-envelope"></i><span>hello@home.com</span></li>
-                            <li><i class="flaticon-smartphone"></i><span>214-805-4428</span></li>
-                        </ul>
-                        <p>Monday – Friday: 9 am – 5 pm</p>
-                        <p>Saturday: 9 am – 1pm</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row p-20">
-                <div class="col-lg-12 text-center">
-                    <div class="copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include './tmp/footer.html' %}
     <!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/main.js"></script>
-</body>
 
-</html>
+{% endblock %}
