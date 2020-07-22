@@ -27,32 +27,31 @@
                             <div class="room-details">
                                 <div class="room-title">
                                     <h5>{{ Ads.title }}</h5>
-                                    <a href="#"><i class="flaticon-placeholder"></i> <span>Location</span></a>
-                                    <a href="#" class="large-width"><i class="flaticon-cursor"></i> <span>Show on
-                                            Map</span></a>
+                                    <a href="#"><i class="flaticon-placeholder"></i> <span>لوکیشن</span></a>
+                                    <a href="#" class="large-width"><i class="flaticon-cursor"></i> <span>{{ Ads.cat_city }}</span></a>
                                 </div>
                             </div>
                             <div class="room-features">
                                 <div class="room-info">
                                     <div class="size">
                                         <p>متراژ بنا</p>
-                                        <img src="{% static 'Ads/img/rooms/size.png' %}" alt="">
+                                        <img src="{% static 'Ads/img/icons/size.png' %}" alt="">
                                         <i class="flaticon-bath"></i>
                                         <span>متر {{ Ads.sizelot }}</span>
                                     </div>
                                     <div class="beds">
                                         <p>خواب</p>
-                                        <img src="{% static 'Ads/img/rooms/bed.png' %}" alt="">
+                                        <img src="{% static 'Ads/img/icons/bed.png' %}" alt="">
                                         <span>9</span>
                                     </div>
                                     <div class="baths">
                                         <p>سرویس</p>
-                                        <img src="{% static 'Ads/img/rooms/bath.png' %}" alt="">
+                                        <img src="{% static 'Ads/img/icons/users.png' %}" alt="">
                                         <span>2</span>
                                     </div>
                                     <div class="garage">
                                         <p>پارکینگ</p>
-                                        <img src="{% static 'Ads/img/rooms/garage.png' %}" alt="">
+                                        <img src="{% static 'Ads/img/icons/floor.png' %}" alt="">
                                         <span>1</span>
                                     </div>
                                 </div>
@@ -61,7 +60,10 @@
                                 <p>{% if Ads.catorg == 'R' %}برای اجاره {% endif%}{% if Ads.catorg == 'S' %}برای فروش {% endif%}</p>
                                 <span>تومان {{ Ads.price|intcomma:False }}</span>
                             </div>
-                            <a href="{% url 'Ads:AdsDetails' Ads.pk %}" class="site-btn btn-line">نمایش آگهی</a>
+                            <hr>
+                            <div class="submit">
+                                <a href="{% url 'Ads:AdsDetails' Ads.pk %}" class="site-btn btn-line">نمایش آگهی</a>
+                             </div>
                         </div>
                     </div>
                 </div>

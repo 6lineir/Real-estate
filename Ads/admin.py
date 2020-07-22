@@ -3,7 +3,7 @@ from .models import Ads, category , service, City
 # Register your models here.
 
 class AdsAdmin(admin.ModelAdmin):
-    list_display = ('title','author', 'status', 'category')
+    list_display = ('title','author', 'status', 'catorg','category', 'cat_city')
 
 admin.site.register(City)
 admin.site.register(Ads, AdsAdmin)
