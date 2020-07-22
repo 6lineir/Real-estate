@@ -46,6 +46,15 @@ Room_CHOICES = (
         ('4', "چهار خواب"),
         ('5', "پنج به بالا"),
 	)
+Fool_CHOICES = (
+        ('2', "دو نفر"),
+        ('4', "چهار نفر"),
+        ('5', "پنج نفر"),
+        ('6', "شش نفر"),
+        ('8', "هشت نفر"),
+        ('10', "ده نفر"),
+        ('15', "پانزده به بالا"),
+	)
 
 class Ads(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="کاربر")
@@ -62,6 +71,7 @@ class Ads(models.Model):
     sizeerth = models.IntegerField(blank=True, verbose_name="متراژ زمین")
     sizelot = models.IntegerField(verbose_name="متراژ بنا")
     rooms = models.CharField(max_length=1, choices=Room_CHOICES, blank=True, verbose_name="تعداد اتاق خواب")
+    fool = models.CharField(max_length=2, choices=Fool_CHOICES, blank=True, verbose_name="ظرفیت نفرات")
     services = models.ManyToManyField(service, blank=True, verbose_name="امکانات")
     cat_city = models.OneToOneField(City, on_delete=any , verbose_name="استان")
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, blank=True, verbose_name="وضعیت فعلی" )

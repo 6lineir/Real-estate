@@ -19,9 +19,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="room-items">
                         <div class="room-img set-bg" data-setbg="{{ Ads.image.url }}">
-                            <a href="#" class="room-content">
-                                <i class="flaticon-heart"></i>
+                        {% if Ads.ads_vip == True %}
+                            <a class="room-content">
+                                <span class="vip"><i class="flaticon-heart">ویژه</i></span>
                             </a>
+                        {% endif %}
                         </div>
                         <div class="room-text">
                             <div class="room-details">
@@ -42,17 +44,16 @@
                                     <div class="beds">
                                         <p>خواب</p>
                                         <img src="{% static 'Ads/img/icons/bed.png' %}" alt="">
-                                        <span>9</span>
+                                        <span>{{ Ads.rooms }}</span>
                                     </div>
                                     <div class="baths">
-                                        <p>سرویس</p>
+                                        <p>ظرفیت</p>
                                         <img src="{% static 'Ads/img/icons/users.png' %}" alt="">
-                                        <span>2</span>
+                                        <span>{{ Ads.fool }}</span>
                                     </div>
-                                    <div class="garage">
-                                        <p>پارکینگ</p>
-                                        <img src="{% static 'Ads/img/icons/floor.png' %}" alt="">
-                                        <span>1</span>
+                                    <div class="garage" >
+                                        <p>نوع ملک</p>
+                                        <span class="catg">{{ Ads.category }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +75,7 @@
     </section>
     <!-- Hotel Room Section End -->
     <!-- Popular Room Section Begin -->
-    <section class="popular-room set-bg p-in" data-setbg="img/bg-2.jpg">
+    <section class="popular-room set-bg p-in" data-setbg="{% static 'Ads/img/bg-2.jpg' %}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-6">

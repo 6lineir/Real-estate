@@ -108,6 +108,23 @@ ol {
 /*---------------------
   Helper CSS
 -----------------------*/
+.vip {
+    background-color: #ff0544;
+    padding: 5px;
+    right: 5px;
+    top: 2px;
+    z-index: 55;
+    border-radius: 11px;
+}
+
+.catg {
+    background-color: #8AD144;
+    padding: 5px;
+    right: 5px;
+    top: 2px;
+    z-index: 55;
+    border-radius: 11px;
+}
 
 .section-title {
 	margin-bottom: 88px;
