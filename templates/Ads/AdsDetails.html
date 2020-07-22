@@ -1,5 +1,6 @@
 {% extends 'Ads/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <title>Details</title>
@@ -19,8 +20,8 @@
                         <a href="#"><i class="fa flaticon-placeholder"></i> London, 76 Guild Street, EC3P 3WF</a>
                     </div>
                     <div class="property-price">
-                        <p>For Sale</p>
-                        <span>$345,000</span>
+                        <p>{% if object.catorg == 'R' %}برای اجاره {% endif%}{% if object.catorg == 'S' %}برای فروش {% endif%}</p>
+                        <span>تومان {{ object.price|intcomma:False }}</span>
                     </div>
                 </div>
             </div>
@@ -53,24 +54,24 @@
                                     </div>
                                     <div class="popular-room-features single-property">
                                         <div class="size">
-                                            <p>Lot Size</p>
-                                            <img src="img/rooms/size.png" alt="">
+                                            <p>متراژ بنا</p>
+                                            <img src="{% static 'Ads/img/rooms/size.png' %}" alt="">
                                             <i class="flaticon-bath"></i>
-                                            <span>2561 sqft</span>
+                                            <span>متر {{ object.sizelot }}</span>
                                         </div>
                                         <div class="beds">
                                             <p>Beds</p>
-                                            <img src="img/rooms/bed.png" alt="">
+                                            <img src="{% static 'Ads/img/rooms/bed.png' %}" alt="">
                                             <span>9</span>
                                         </div>
                                         <div class="baths">
                                             <p>Baths</p>
-                                            <img src="img/rooms/bath.png" alt="">
+                                            <img src="{% static 'Ads/img/rooms/bath.png' %}" alt="">
                                             <span>2</span>
                                         </div>
                                         <div class="garage">
                                             <p>Garage</p>
-                                            <img src="img/rooms/garage.png" alt="">
+                                            <img src="{% static 'Ads/img/rooms/garage.png' %}" alt="">
                                             <span>1</span>
                                         </div>
                                     </div>
@@ -80,18 +81,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="property-description">
-                                    <h4>Description</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in justo
-                                        elementum,fermentum justo ac, rutrum erat. Aenean ut malesuada diam. Proin
-                                        bibendum
-                                        sapien sodales, convallis dolor facilisis, ultricies nisl. Sed malesuada nibh
-                                        sed
-                                        velit ultricies, id varius lacus feugiat. Aenean vestibulum, nisl eget accumsan
-                                        aliquam, magna diam convallis risus, in tristique metus sem eu tortor. Cras leo
-                                        libero, fermentum quis aliquam et, tincidunt at dolor. </p>
+                                    <h4>توضیحات آگهی</h4>
+                                    <p>{{ object.body }}</p>
                                 </div>
                                 <div class="property-features">
-                                    <h4>Property Features</h4>
+                                    <h4>سرویس ها و امکانات</h4>
                                     <div class="property-table">
                                         <table>
                                             <tr>
@@ -164,24 +158,24 @@
                     <div class="row pb-30">
                         <div class="col-lg-12">
                             <div class="contact-service">
-                                <img src="img/single-property/small.png" alt="">
-                                <p>Listed by</p>
-                                <h5>Oliver G Harris</h5>
+                                <img src="{{ user.avatar.url }}" alt="">
+                                <p>آگهی دهنده</p>
+                                <h5>{{ object.author }}</h5>
                                 <table>
                                     <tr>
-                                        <td>Office : <span>1-139-954-3228</span></td>
+                                        <td>نام و نام خانوادگی : <span>{{ user.get_full_name }}</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Mobile : <span>1-517-328-7751</span></td>
+                                        <td>موبایل : <span>{{ user.phone }}</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Fax : <span>1-458-284-9871</span></td>
+                                        <td>واتس آپ : <span>{{ user.watsapp }}</span></td>
                                     </tr>
                                     <tr>
-                                        <td>WhatsApp : <span>1-812-117-2663</span></td>
+                                        <td>تلگرام : <span>{{ user.telegram }}</span></td>
                                     </tr>
                                     <tr>
-                                        <td>Email : <span>oliver@homes.com</span></td>
+                                        <td>ایمیل : <span>{{ user.email }}</span></td>
                                     </tr>
                                 </table>
                                 <a href="#" class="site-btn list-btn">View More Listings</a>

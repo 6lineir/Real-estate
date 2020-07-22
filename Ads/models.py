@@ -3,6 +3,15 @@ from accounts.models import User
 from django.utils import timezone
 
 # Create your models here.
+class City(models.Model):
+    ct_title = models.CharField(max_length=48, verbose_name='استان')
+    
+    def __str__(self):
+        return self.ct_title
+    class Meta:
+        verbose_name = "استان"
+        verbose_name_plural = "استان ها"
+
 class category(models.Model):
     cat_title = models.CharField(max_length=48, verbose_name='دسته بندی')
     cat_slug = models.SlugField(verbose_name='لینک دسته بندی') 
@@ -30,6 +39,13 @@ Cat_CHOICES = (
         ('R', "برای اجاره"),
         ('S', "برای فروش"),
 	)
+Room_CHOICES = (
+        ('1', "تک خواب"),
+        ('2', "دو خواب"),
+        ('3', "سه خواب"),
+        ('4', "چهار خواب"),
+        ('5', "پنج به بالا"),
+	)
 
 class Ads(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="کاربر")
@@ -37,7 +53,7 @@ class Ads(models.Model):
     title = models.CharField(max_length=64, verbose_name="عنوان آگهی")
     body = models.TextField(verbose_name="توضیحات")
     catorg = models.CharField(max_length=1, choices=Cat_CHOICES, verbose_name="اجاره/فروش")
-    category = models.OneToOneField(category, on_delete=any , verbose_name="دسته بندی")
+    category = models.OneToOneField(category, on_delete=any, verbose_name="دسته بندی")
     price = models.IntegerField( verbose_name="ارزش کل ملک")
     pricerent1 = models.IntegerField(blank=True, verbose_name="قیمت اجاره شنبه تا چهارشنبه")
     pricerent2 = models.IntegerField(blank=True, verbose_name="قیمت اجاره چهارشنبه تا شنبه")
@@ -46,7 +62,9 @@ class Ads(models.Model):
     image2 = models.ImageField(upload_to="adspic", verbose_name="تصویر")
     sizeerth = models.IntegerField(blank=True, verbose_name="متراژ زمین")
     sizelot = models.IntegerField(verbose_name="متراژ بنا")
+    rooms = models.CharField(max_length=1, choices=Room_CHOICES, blank=True, verbose_name="تعداد اتاق خواب")
     services = models.ManyToManyField(service, blank=True, verbose_name="امکانات")
+    cat_city = models.OneToOneField(City, on_delete=any , verbose_name="استان")
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, blank=True, verbose_name="وضعیت فعلی" )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="زمان انتشار آگهی")
 
