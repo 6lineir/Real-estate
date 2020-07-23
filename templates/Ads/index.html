@@ -9,7 +9,90 @@
     <!-- Header Section Begin -->
         {% include './tmp/header.html' %}
     <!-- Hero Section End -->
-
+   <!-- Filter Search Section Begin -->
+   <div class="filter-search">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="filter-form">
+                    <div class="location">
+                        <p>استان/شهر</p>
+                    {% for Ads.cat_city in object %}
+                        <select class="filter-location">
+                            <option value="">{{ object.cat_city }}</option>
+                        </select>
+                        {% endfor %}
+                    </div>
+                    <div class="search-type">
+                        <p>نوع ملک</p>
+                        <select class="filter-property">
+                            <option value="">House</option>
+                            <option value="">Resort</option>
+                            <option value="">Hotel</option>
+                        </select>
+                    </div>
+                    <div class="price-range">
+                        <p>قیمت</p>
+                        <div class="range-slider">
+                            <div id="slider-range">
+                                <div tabindex="0"
+                                    class="ui-slider-handle ui-corner-all ui-state-default slider-left">50k</div>
+                                <div tabindex="0"
+                                    class="ui-slider-handle ui-corner-all ui-state-default slider-right">300k</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bedrooms">
+                        <p>تعداد خواب</p>
+                        <div class="room-filter-pagi">
+                            <div class="bf-item">
+                                <input type="radio" name="room" id="room-1">
+                                <label for="room-1">1</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="room" id="room-2">
+                                <label for="room-2">2</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="room" id="room-3">
+                                <label for="room-3">3</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="room" id="room-4">
+                                <label for="room-4">4+</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bathrooms">
+                        <p>Bathrooms</p>
+                        <div class="room-filter-pagi">
+                            <div class="bf-item">
+                                <input type="radio" name="bathroom" id="bathroom-1">
+                                <label for="bathroom-1">1</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="bathroom" id="bathroom-2">
+                                <label for="bathroom-2">2</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="bathroom" id="bathroom-3">
+                                <label for="bathroom-3">3</label>
+                            </div>
+                            <div class="bf-item">
+                                <input type="radio" name="bathroom" id="bathroom-4">
+                                <label for="bathroom-4">4+</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-btn">
+                        <button type="submit"><i class="flaticon-search"></i>جستجو</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Filter Search Section End -->
     <!-- Hotel Room Section Begin -->
     <section class="hotel-rooms spad">
         <div class="container">

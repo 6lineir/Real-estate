@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView 
 
-from .models import Ads, service, category
+from .models import Ads, service, category, City
 # Create your views here.
 
 #def index(request):
