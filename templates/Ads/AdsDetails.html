@@ -17,7 +17,7 @@
                 <div class="col-lg-12">
                     <div class="property-title">
                         <h3>{{ object.title }}</h3>
-                        <a href="#"><i class="fa flaticon-placeholder"></i> London, 76 Guild Street, EC3P 3WF</a>
+                        <a href="#"><i class="fa flaticon-placeholder"></i>{{ object.cat_city }}</a>
                     </div>
                     <div class="property-price">
                         <p>{% if object.catorg == 'R' %}برای اجاره {% endif%}{% if object.catorg == 'S' %}برای فروش {% endif%}</p>
@@ -62,17 +62,17 @@
                                         <div class="beds">
                                             <p>اتاق خواب</p>
                                             <img src="{% static 'Ads/img/icons/bed.png' %}" alt="">
-                                            <span>9</span>
+                                            <span>{{ object.rooms }}</span>
                                         </div>
                                         <div class="baths">
-                                            <p>نفرات</p>
+                                            <p>ظرفیت نفرات</p>
                                             <img src="{% static 'Ads/img/icons/users.png' %}" alt="">
-                                            <span>2</span>
+                                            <span>{{ object.fool }}</span>
                                         </div>
                                         <div class="garage">
                                             <p>طبقه</p>
                                             <img src="{% static 'Ads/img/icons/floor.png' %}" alt="">
-                                            <span>1</span>
+                                            <span>{{ object.floor }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -89,59 +89,9 @@
                                     <div class="property-table">
                                         <table>
                                             <tr>
-                                                <td><img src="img/check.png" alt=""> Home theater</td>
-                                                <td><img src="img/check.png" alt=""> Carpeting</td>
-                                                <td><img src="img/check.png" alt=""> Attic fans</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Media room</td>
-                                                <td><img src="img/check.png" alt=""> Concrete</td>
-                                                <td><img src="img/check.png" alt=""> Ceiling fans</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Family room</td>
-                                                <td><img src="img/check.png" alt=""> Bamboo</td>
-                                                <td><img src="img/check.png" alt=""> Thermostats</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Gym/workout room</td>
-                                                <td><img src="img/check.png" alt=""> Stone</td>
-                                                <td><img src="img/check.png" alt=""> Single flush toilets</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Library</td>
-                                                <td><img src="img/check.png" alt=""> Tile</td>
-                                                <td><img src="img/check.png" alt=""> Window shutters</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Butler's pantry</td>
-                                                <td><img src="img/check.png" alt=""> Laminate</td>
-                                                <td><img src="img/check.png" alt=""> Solar heat</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Sunroom</td>
-                                                <td><img src="img/check.png" alt=""> Cork</td>
-                                                <td><img src="img/check.png" alt=""> Solar plumbing</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Downstairs's bedroom</td>
-                                                <td><img src="img/check.png" alt=""> Vinyl / linoleum</td>
-                                                <td><img src="img/check.png" alt=""> Solar Screens</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Basement</td>
-                                                <td><img src="img/check.png" alt=""> Manufactured wood</td>
-                                                <td><img src="img/check.png" alt=""> Storm windows</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Guest quarters</td>
-                                                <td><img src="img/check.png" alt=""> Marble</td>
-                                                <td><img src="img/check.png" alt=""> Tankless water heater</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src="img/check.png" alt=""> Wine storage</td>
-                                                <td><img src="img/check.png" alt=""> Wood</td>
-                                                <td><img src="img/check.png" alt=""> Skylights or sky tubes</td>
+                                                <td><img src="{% static 'Ads/img/check.png' %}" alt=""> {{ object.services }}</td>
+                                                <td><img src="{% static 'Ads/img/check.png' %}" alt=""> {{ object.services }}</td>
+                                                <td><img src="{% static 'Ads/img/check.png' %}" alt=""> {{ object.services }}</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -184,53 +134,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="room-items">
-                                <div class="room-img set-bg" data-setbg="img/rooms/4.jpg">
-                                    <a href="#" class="room-content">
-                                        <i class="flaticon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="room-text">
-                                    <div class="room-details">
-                                        <div class="room-title">
-                                            <h5>Country Style House with beautiful garden and terrace</h5>
-                                            <a href="#"><i class="flaticon-placeholder"></i> <span>Location</span></a>
-                                            <a href="#" class="large-width"><i class="flaticon-cursor"></i> <span>Show
-                                                    on Map</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="room-features">
-                                        <div class="room-info">
-                                            <div class="size">
-                                                <p>Lot Size</p>
-                                                <img src="img/icons/size.png" alt="">
-                                                <i class="flaticon-bath"></i>
-                                                <span>2561 sqft</span>
-                                            </div>
-                                            <div class="beds">
-                                                <p>Beds</p>
-                                                <img src="img/rooms/bed.png" alt="">
-                                                <span>9</span>
-                                            </div>
-                                            <div class="baths">
-                                                <p>Baths</p>
-                                                <img src="img/rooms/bath.png" alt="">
-                                                <span>2</span>
-                                            </div>
-                                            <div class="garage">
-                                                <p>Garage</p>
-                                                <img src="img/rooms/garage.png" alt="">
-                                                <span>1</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="room-price">
-                                        <p>For Sale</p>
-                                        <span>$345,000</span>
-                                    </div>
-                                    <a href="#" class="site-btn btn-line">View Property</a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -17,11 +17,11 @@
                 <form class="filter-form">
                     <div class="location">
                         <p>استان/شهر</p>
-                    {% for Ads.cat_city in object %}
                         <select class="filter-location">
-                            <option value="">{{ object.cat_city }}</option>
+                            {% for ct_title in City %}
+                            <option value="">s{{ City.ct_title }}</option>
+                            {% endfor %}
                         </select>
-                        {% endfor %}
                     </div>
                     <div class="search-type">
                         <p>نوع ملک</p>
