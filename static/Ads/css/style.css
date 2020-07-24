@@ -887,8 +887,8 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .details-top {
-	padding: 25px 0;
-	margin-bottom: 35px;
+	padding: 5px 0;
+	margin-bottom: 10px;
 	border-bottom: 1px solid #f3f3f3;
 	margin-left: -25px;
 	margin-right: -20px;

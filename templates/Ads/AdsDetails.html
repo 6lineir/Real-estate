@@ -29,10 +29,10 @@
                 <div class="col-lg-12">
                     <div class="property-img owl-carousel">
                         <div class="single-img">
-                            <img src="{{ object.image.url }}" alt="">
+                            <img src="{{ object.image.url }}" alt="" width="500" height="600">
                         </div>
                         <div class="single-img">
-                            <img src="{{ object.image2.url }}" alt="">
+                            <img src="{{ object.image2.url }}" alt="" width="500" height="600">
                         </div>
                     </div>
                 </div>
@@ -78,6 +78,43 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row details-top">
+                            <div class="col-lg-12">
+                                <div class="t-details">
+                                    <div class="register-id">
+                                        <p>اجاره شبانه شنبه تا چهارشنبه : <span>تومان {{ object.pricerent1|intcomma:False }}</span></p>
+                                        <p>اجاره شبانه چهارشنبه تا جمعه : <span>تومان {{ object.pricerent2|intcomma:False }}</span></p>
+                                        <p>اجاره شبانه تطعیلات و عید : <span>تومان {{ object.pricerent3|intcomma:False }}</span></p>
+                                    </div>
+                                    <div class="popular-room-features single-property">
+                                        <div class="size">
+                                            <p>متراژ زمین</p>
+                                            <img src="/static/Ads/img/icons/size.png" alt="">
+                                            <i class="flaticon-bath"></i>
+                                            <span>{{ object.sizeerth }}</span>
+                                        </div>
+                                        <div class="beds">
+                                            <p>دسته بندی</p>
+                                            <img src="/static/Ads/img/icons/bed.png" alt="">
+                                            <span>{{ object.category }}</span>
+                                        </div>
+                                        <div class="baths">
+                                            <p>ظرفیت نفرات</p>
+                                            <img src="/static/Ads/img/icons/users.png" alt="">
+                                            <span>6</span>
+                                        </div>
+                                        <div class="garage">
+                                            <p>طبقه</p>
+                                            <img src="/static/Ads/img/icons/floor.png" alt="">
+                                            <span>2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="property-description">
