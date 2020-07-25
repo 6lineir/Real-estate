@@ -1,0 +1,137 @@
+{% extends 'panel/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<title>پروفایل {{ user.username }}
+</title>
+<div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      {% include './partials/_sidebar.html' %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        {% include './partials/_navbar.html' %}
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">ویرایش پروفایل کاربری</h4>
+
+                  <form class="form-sample" method="post">
+                   {% csrf_token %}
+                    <p class="card-description">اطلاعات حساب کاربری</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">نام</label>
+                          <div class="col-sm-9">
+                            {{ form.first_name| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">نام خانوادگی</label>
+                          <div class="col-sm-9">
+                            {{ form.last_name| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">شناسه کاربری</label>
+                          <div class="col-sm-9 input-group-prepend">
+                            <span class="input-group-text">@</span>
+                            {{ form.username| add_class:"form-control " }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">ایمیل</label>
+                          <div class="col-sm-9">
+                            {{ form.email| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="card-description"> Address </p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">شماره تماس</label>
+                          <div class="col-sm-9 input-group-append">
+                            <div class="input-group-append">
+                              <button class="btn btn-sm btn-warning" type="button">
+                                <i class="mdi mdi-phone"></i>
+                              </button>
+                            </div>
+                             {{ form.phone| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">تلگرام ID</label>
+                          <div class="col-sm-9 input-group-append">
+                            <div class="input-group-append">
+                              <button class="btn btn-sm btn-primary" type="button">
+                                <i class="mdi mdi-telegram"></i>
+                              </button>
+                            </div>
+                            {{ form.telegram| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">واتس آپ</label>
+                          <div class="col-sm-9 input-group-append">
+                            <div class="input-group-append">
+                              <button class="btn btn-sm btn-success" type="button">
+                                <i class="mdi mdi-whatsapp"></i>
+                              </button>
+                            </div>
+                            {{ form.watsapp| add_class:"form-control" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">آواتار</label>
+                          <div class="col-sm-9">
+                            {{ form.avatar| add_class:"form-control file-upload-info" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-rounded btn-fw mr-2">ذخیره</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          {% include './partials/_footer.html' %}
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    {% endblock %}

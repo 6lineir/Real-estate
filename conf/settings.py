@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'accounts.apps.AccountsConfig',
     'Ads.apps.AdsConfig',
+    'bootstrap4',
+    'widget_tweaks',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

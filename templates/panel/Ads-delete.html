@@ -1,0 +1,45 @@
+
+{% extends 'panel/base.html' %}
+
+{% block content %}
+<title>لیست وبلاگ ها</title>
+<div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      {% include './partials/_sidebar.html' %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        {% include './partials/_navbar.html' %}
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <div class="col grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">حذف بلاگ</h4>
+                  <p class="card-description"> <code>مدیریت</code> تمامی بلاگ ها
+                  </p>
+                  <form method="post">
+                    {% csrf_token %}
+                    <p class="py-2">آیا از حذف مقاله «{{object}}» از «{{object.author.get_full_name}}» مطمئن هستید؟</p>
+                    <input type="submit" value="حذف" class="btn-lg btn-danger">
+                </form>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          {% include './partials/_footer.html' %}
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    {% endblock %}

@@ -12,14 +12,21 @@
                     <li><a href="{% url 'Ads:index' %}">خانه</a></li>
                     <li><a href="#">لیست آگهی ها</a></li>
                     <li><a href="#">درباره ما</a></li>
-                    <li><a href="#">تماس باما</a></li>
-
+                    <li><a href="{% url 'Ads:contact' %}">تماس باما</a></li>
+                    
                     <li class="top-social">
                         <a href="https://t.me/Amlak_kara_com"><i class="fa fa-telegram"></i></a>
                         <a href="https://instagram.com/Amlak_kara.co"><i class="fa fa-instagram"></i></a>
                         <a href="https://chat.whatsapp.com/HHc6Mdi0s2S0sCs4NVSu46"><i class="fa fa-whatsapp"></i></a>
                         <a href="./acoounts/"><i class="fa fa-cogs"></i></a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:dashboard' %}" class="site-btn">داشبورد</a></li>
+                    <li><a href="{% url 'accounts:logout' %}" class="site-btn">خروج</a></li>
+                    {% else %}
+                    <li><a href="{% url 'Ads:index' %}" class="site-btn">مهمان شوید</a></li>
+                    <li><a href="{% url 'accounts:login' %}" class="site-btn">میزبان شوید</a></li>
+                    {% endif %}
                 </ul>
                 <div id="mobile-menu-wrap"></div>
             </div>

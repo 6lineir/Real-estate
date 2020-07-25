@@ -1,0 +1,79 @@
+
+{% extends 'panel/base.html' %}
+
+{% block content %}
+<title>لیست وبلاگ ها</title>
+<div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      {% include './partials/_sidebar.html' %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        {% include './partials/_navbar.html' %}
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <div class="col grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">لیست بلاگ ها</h4>
+                  <p class="card-description"> <code>مدیریت</code> تمامی بلاگ ها
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>نویسنده</th>
+                          <th>عنوان</th>
+                          <th>تاریخ اتشار</th>
+                          <th>وضعیت</th>
+                          <th>ویرایش</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for blog in object_list %}
+                        <tr>
+                          <td>{{ blog.author }}</td>
+                          <td>{{ blog.title }}</td>
+                          <td class="text-success">{{ blog.publish }} <i class="mdi mdi-arrow-left"></i></td>
+                          <td>{% if blog.status == 'p' %}
+                            <label class="badge badge-success">منتشرشده</label>
+                            {% else %}
+                            {% if blog.status == 'f' %}
+                            <label class="badge badge-secondary">پیش نویس</label>
+                            {% else %}
+                            {% if blog.status == 'v' %}
+                            <label class="badge badge-warning">آگهی ویژه</label>
+                            {% else %}
+                            {% if blog.status == 'd' %}
+                            <label class="badge badge-danger">در انتظار تایید</label>
+                            {% endif %}{% endif %}{% endif %}{% endif %}
+                          </td>
+                          <td>
+                            <a href="{% url 'accounts:edit-blog' blog.pk %}" class="btn btn-dark btn-icon-text"> ویرایش <i class="mdi mdi-file-check btn-icon-append"></i></a>
+                          </td>
+
+                          {% endfor %}
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          {% include './partials/_footer.html' %}
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    {% endblock %}

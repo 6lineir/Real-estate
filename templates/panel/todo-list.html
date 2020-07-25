@@ -1,0 +1,58 @@
+
+{% extends 'panel/base.html' %}
+
+{% block content %}
+<title>عنوان صفحه</title>
+<div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      {% include './partials/_sidebar.html' %}
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        {% include './partials/_navbar.html' %}
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+
+            <div class="col grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">لیست یادآوری ها</h4>
+                  <div class="add-items d-flex">
+                    <input type="text" class="form-control todo-list-input" placeholder="enter task..">
+                    {{ form.title }}
+                    <button class="add btn btn-primary todo-list-add-btn">Add</button>
+                  </div>
+                  <div class="list-wrapper">
+                    <ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+                      {% for todo in object_list %}
+                      
+                      <li class="{% if todo.status == True %}completed{% endif %}">
+                        <div class="form-check form-check-primary">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox" {% if todo.status == True %} checked="" {% endif %}>{{ todo.title }}<i class="input-helper"></i></label>
+                        </div>
+                        <i class="remove mdi mdi-close-box"></i>
+                      </li>
+
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          {% include './partials/_footer.html' %}
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    {% endblock %}
