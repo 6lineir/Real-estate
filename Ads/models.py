@@ -54,13 +54,13 @@ Floor_CHOICES = (
         ('5', "پنج طبقه به بالا"),
 	)
 Fool_CHOICES = (
-        ('2', "دو نفر"),
-        ('4', "چهار نفر"),
-        ('5', "پنج نفر"),
-        ('6', "شش نفر"),
-        ('8', "هشت نفر"),
-        ('10', "ده نفر"),
-        ('15', "پانزده به بالا"),
+        ("دو نفر", "دو نفر"),
+        ("چهار نفر", "چهار نفر"),
+        ("پنج نفر", "پنج نفر"),
+        ("شش نفر", "شش نفر"),
+        ("هشت نفر", "هشت نفر"),
+        ("ده نفر", "ده نفر"),
+        ("پانزده به بالا", "پانزده به بالا"),
 	)
 
 class Ads(models.Model):
@@ -79,7 +79,7 @@ class Ads(models.Model):
     sizelot = models.IntegerField(verbose_name="متراژ بنا")
     floor = models.CharField(max_length=2, choices=Floor_CHOICES, blank=True, verbose_name="تعداد طبقات")
     rooms = models.CharField(max_length=1, choices=Room_CHOICES, blank=True, verbose_name="تعداد اتاق خواب")
-    fool = models.CharField(max_length=2, choices=Fool_CHOICES, blank=True, verbose_name="ظرفیت نفرات")
+    fool = models.CharField(max_length=20, choices=Fool_CHOICES, blank=True, verbose_name="ظرفیت نفرات")
     services = models.ManyToManyField(service, blank=True, verbose_name="امکانات")
     cat_city = models.ForeignKey(City,on_delete=any, verbose_name="استان")
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, blank=True, verbose_name="وضعیت فعلی" )

@@ -17,4 +17,6 @@ urlpatterns = [
 urlpatterns +=[
     path('', dash.as_view(), name='dashboard'),
     path('profile/', profile.as_view(), name='profile'),
+    path('adslist/', Ads_list.as_view(), name='Adslist'),
+    path('adsadd/', Ads_add.as_view(), name='Adsadd'),
 ]

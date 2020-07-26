@@ -75,11 +75,11 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {% if request.resolver_match.url_name == 'blog-list' %} active {% endif %}">
-             <a class="nav-link" href="#">لیست آگهی ها</a></li>
-          <li class="nav-item {% if request.resolver_match.url_name == 'add-blog' %} active {% endif %}">
-             <a class="nav-link" href="#">افزودن آگهی</a></li>
-          <li class="nav-item {% if request.resolver_match.url_name == 'dashboard' %} active {% endif %}">
+          <li class="nav-item {% if request.resolver_match.url_name == 'Adslist' %} active {% endif %}">
+             <a class="nav-link" href="{% url 'accounts:Adslist' %}">لیست آگهی ها</a></li>
+          <li class="nav-item {% if request.resolver_match.url_name == 'Adsadd' %} active {% endif %}">
+             <a class="nav-link" href="{% url 'accounts:Adsadd' %}">افزودن آگهی</a></li>
+          <li class="nav-item {% if request.resolver_match.url_name == 'category' %} active {% endif %}">
              <a class="nav-link" href="#">دسته بندی ها</a></li>
         </ul>
       </div>
@@ -93,7 +93,7 @@
       </a>
     </li>
     <li class="nav-item menu-items {% if request.resolver_match.url_name == 'profile' %} active {% endif %}">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{% url 'accounts:profile' %}">
         <span class="menu-icon">
           <i class="mdi mdi-table-large"></i>
         </span>

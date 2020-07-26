@@ -16,6 +16,9 @@ from django.views.generic import (
 class dash(ListView):
     model = Ads
     template_name = "panel/index.html"
+class Ads_list(LoginRequiredMixin, ListView):
+    model = Ads
+    template_name = "panel/Ads-list.html"
 
 class profile(LoginRequiredMixin ,UpdateView):
     model = User
@@ -32,3 +35,6 @@ class profile(LoginRequiredMixin ,UpdateView):
             'user': self.request.user
 		})
         return kwargs
+class Ads_add(LoginRequiredMixin ,CreateView):
+    model = Ads
+    template_name = "panel/Ads-add.html"
