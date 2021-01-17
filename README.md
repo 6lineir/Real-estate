@@ -1,2 +1,2 @@
-# Amlak-Kara
-WebApplication Real-State Ads system for Amlak-Kara 
+# v1 Real Estate
+WebApplication Real-State Ads system Basic
