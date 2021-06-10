@@ -8,7 +8,7 @@ colorama==0.4.3
 contextlib2==0.6.0
 distlib==0.3.0
 distro==1.4.0
-Django==3.0.8
+Django==3.1.12
 django-bootstrap4==2.2.0
 django-rest-framework==0.1.0
 django-widget-tweaks==1.4.8
